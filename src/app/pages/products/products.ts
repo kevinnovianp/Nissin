@@ -20,9 +20,10 @@ export class Products {
       "name": "Nissin NSN-BD-550",
       "model": "NSN-BD-550",
       "category_id": 1,
-      "desc 1": "Chest Freezer 465 Liter untuk kebutuhan commercial kitchen.",
+      "desc_1": "Chest Freezer 465 Liter untuk kebutuhan commercial kitchen.",
       "desc_2": "Kapasitas 465 liter dengan temperatur ± -18°C hingga -25°C untuk kebutuhan penyimpanan produk beku.",
-      "intro": "NISSIN NSN-BD-550 adalah chest freezer berkapasitas 465 liter dengan sistem compressor cooling system, dirancang untuk menjaga suhu penyimpanan pada rentang -18°C ~ -25°C. Cocok digunakan pada operasional dapur komersial yang membutuhkan ruang penyimpanan beku yang stabil dan konsisten.",
+      "intro_1": "Dirancang untuk Kebutuhan Penyimpanan Frozen Food",
+      "intro_2": "NISSIN NSN-BD-550 adalah chest freezer berkapasitas 465 liter dengan sistem compressor cooling system, dirancang untuk menjaga suhu penyimpanan pada rentang -18°C ~ -25°C. Cocok digunakan pada operasional dapur komersial yang membutuhkan ruang penyimpanan beku yang stabil dan konsisten.",
       "specs_main":[
         {"title":"Capacity", "value":"465 Liter"},
         {"title":"Temperature Range", "value":"-18°C to -25°C"},
@@ -129,6 +130,6 @@ export class Products {
   }
 
   chooseProduct(id: number) {
-    this.router.navigate(['/product'], { queryParams: { product: id } });
+    this.router.navigate(['/product'], { queryParams: { id: id } });
   }
 }

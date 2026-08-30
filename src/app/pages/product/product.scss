@@ -1,0 +1,61 @@
+#subsection{
+  padding: 48px 0;
+}
+
+#product-title{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  & h1{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+  }
+}
+
+#dummy-product-img{
+  width: 50%;
+  max-width: 100%;
+  height: 600px;
+  display: grid;
+  place-items: center;
+  border: 2px dashed black;
+  flex-shrink: 0;
+}
+
+#product-intro{
+  width: 70%;
+}
+
+.spec{
+  height: 200px;
+}
+
+.feature{
+    & span{
+      min-height: 60px;
+    }
+  }
+
+@media (max-width: 767px) {
+  #dummy-product-img {
+    width: 100% !important;
+  }
+  #product-intro{
+    width: 100% !important;
+  }
+  .spec{
+    height: 75px;
+  }
+  .feature{
+    & span{
+      min-height:0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .w-md-20 {
+    width: 19% !important;
+  }
+}

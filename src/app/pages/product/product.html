@@ -1,1 +1,66 @@
-<p>product works!</p>
+<section>
+  <div id="subsection" class="container d-flex flex-column flex-md-row gap-5 justify-content-center align-items-center border-bottom border-dark-subtle">
+    <div id="product-title">
+      <h1 class="text m-0">
+        {{product.name}}
+      </h1>
+      <h4 class="text m-0">
+        {{ product.desc_1 }}
+      </h4>
+      <p class="text m-0">
+        {{ product.desc_2 }}
+      </p>
+    </div>
+    <div id="dummy-product-img">Product Image</div>
+  </div>
+
+  <div id="subsection" class="container d-flex flex-column flex-md-row gap-4 justify-content-between border-bottom border-dark-subtle">
+    <p class="text m-0">
+      PRODUCT INTRODUCTION
+    </p>
+    <div id="product-intro" class="container m-0 p-0">
+      <h2 class="text m-0 pb-3">
+        {{ product.intro_1 }}
+      </h2>
+      <p class="text m-0">
+        {{ product.intro_2 }}
+      </p>
+    </div>
+  </div>
+
+  <div id="subsection" class="container d-flex flex-column gap-4 justify-content-center border-bottom border-dark-subtle">
+    <p class="text m-0">
+      KEY SPECIFICATIONS
+    </p>
+    <div id="product-spec" class="container m-0 p-0">
+      <div class="spec-grid row row-cols-1 row-cols-md-5 m-0 w-100 h-auto align-items-stretch">
+        @for (spec of product.specs_main; track $index) {
+          <div class="col p-0">
+            <div class="spec p-4 bg-white border border-1 border-dark shadow-sm d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between text-start text-md-center">
+              <span>{{ spec.title }}</span>
+              <h4 class="mb-0 text-start">{{ spec.value }}</h4>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div id="subsection" class="container d-flex flex-column gap-4 justify-content-center mb-4">
+    <p class="text m-0">
+      PRODUCT FEATURES
+    </p>
+    <div id="product-feature" class="container m-0 p-0">
+      <div class="feature-grid d-flex flex-column flex-sm-row flex-wrap justify-content-md-between gap-3 gap-md-0 m-0 w-100 h-auto align-items-stretch">
+        @for (feature of product.features; track $index) {
+          <div class="feature-item w-100 w-md-20 p-0 d-flex">
+            <div class="feature w-100 p-0 bg-white border-top border-1 border-dark d-flex flex-column align-items-start text-start">
+              <span class="fw-bold my-2">{{ feature.title }}</span>
+              <span>{{ feature.desc }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,88 +1,96 @@
 <section>
   <div id="subsection" class="container d-flex flex-column gap-4 justify-content-center align-items-center">
     <div class="container m-0 p-0">
-      <h5 class="text m-0 pb-5">
-        Showing data {{ startResultIndex }} {{ startResultIndex === endResultIndex ? '' : '- ' + endResultIndex }}
-        of {{ filteredProducts.length }} results
-      </h5>
-      <div class="product-grid">
-          @for (product of paginatedProducts; track $index) {
-            <div id="dummy-data" (click)="chooseProduct(product.id)">
-              <div class="category p-4" id="dummy-img">
-                <p class="m-0">{{ product.img }}</p>
+      @if(filteredProducts.length === 0){
+        <h5 class="text m-0 pb-5">
+          No products found
+        </h5>
+      } @else {
+        <h5 class="text m-0 pb-5">
+          Showing data {{ startResultIndex }} {{ startResultIndex === endResultIndex ? '' : '- ' + endResultIndex }}
+          of {{ filteredProducts.length }} results
+        </h5>
+        <div class="product-grid">
+            @for (product of paginatedProducts; track $index) {
+              <div id="dummy-data" (click)="chooseProduct(product.id)">
+                <div class="category p-4" id="dummy-img">
+                  <p class="m-0">{{ product.img }}</p>
+                </div>
+                <span class="mb-0">{{ product.name }}</span>
               </div>
-              <span class="mb-0">{{ product.name }}</span>
-            </div>
-          }
-      </div>
-    </div>
-  </div>
-
-  <div id="subsection">
-    <nav class="pagination-nav" aria-label="Navigasi halaman produk">
-
-      <!-- Tautan Halaman Pertama -->
-      <a
-        class="nav-link first-last"
-        [class.disabled]="currentPage === 1"
-        [attr.aria-disabled]="currentPage === 1"
-        [tabindex]="currentPage === 1 ? -1 : 0"
-        (click)="currentPage !== 1 && goToPage(1)"
-        (keydown.enter)="currentPage !== 1 && goToPage(1)">
-        &lt;&lt;
-      </a>
-
-      <!-- Tautan Sebelumnya -->
-      <a
-        class="nav-link prev-next"
-        [class.disabled]="currentPage === 1"
-        [attr.aria-disabled]="currentPage === 1"
-        [tabindex]="currentPage === 1 ? -1 : 0"
-        (click)="currentPage !== 1 && goToPage(currentPage - 1)"
-        (keydown.enter)="currentPage !== 1 && goToPage(currentPage - 1)">
-        &lt;
-      </a>
-
-      <!-- Daftar Angka Halaman -->
-      <div class="page-links-group mx-3">
-      @for (page of pagesArray; track $index) {
-        @if (page === '...') {
-          <span class="nav-link ellipsis">{{ page }}</span>
-        } @else {
-          <a
-            class="nav-link page-number"
-            [class.active]="currentPage === page"
-            [tabindex]="0"
-            (click)="goToPage(page)"
-            (keydown.enter)="goToPage(page)">
-            {{ page }}
-          </a>
-        }
+            }
+        </div>
       }
     </div>
-
-      <!-- Tautan Selanjutnya -->
-      <a
-        class="nav-link prev-next"
-        [class.disabled]="currentPage === totalPages"
-        [attr.aria-disabled]="currentPage === totalPages"
-        [tabindex]="currentPage === totalPages ? -1 : 0"
-        (click)="currentPage !== totalPages && goToPage(currentPage + 1)"
-        (keydown.enter)="currentPage !== totalPages && goToPage(currentPage + 1)">
-        &gt;
-      </a>
-
-      <!-- Tautan Halaman Terakhir -->
-      <a
-        class="nav-link first-last"
-        [class.disabled]="currentPage === totalPages"
-        [attr.aria-disabled]="currentPage === totalPages"
-        [tabindex]="currentPage === totalPages ? -1 : 0"
-        (click)="currentPage !== totalPages && goToPage(totalPages)"
-        (keydown.enter)="currentPage !== totalPages && goToPage(totalPages)">
-        &gt;&gt;
-      </a>
-
-    </nav>
   </div>
+
+  @if(filteredProducts.length > 0){
+    <div id="subsection">
+      <nav class="pagination-nav" aria-label="Navigasi halaman produk">
+
+        <!-- Tautan Halaman Pertama -->
+        <a
+          class="nav-link first-last"
+          [class.disabled]="currentPage === 1"
+          [attr.aria-disabled]="currentPage === 1"
+          [tabindex]="currentPage === 1 ? -1 : 0"
+          (click)="currentPage !== 1 && goToPage(1)"
+          (keydown.enter)="currentPage !== 1 && goToPage(1)">
+          &lt;&lt;
+        </a>
+
+        <!-- Tautan Sebelumnya -->
+        <a
+          class="nav-link prev-next"
+          [class.disabled]="currentPage === 1"
+          [attr.aria-disabled]="currentPage === 1"
+          [tabindex]="currentPage === 1 ? -1 : 0"
+          (click)="currentPage !== 1 && goToPage(currentPage - 1)"
+          (keydown.enter)="currentPage !== 1 && goToPage(currentPage - 1)">
+          &lt;
+        </a>
+
+        <!-- Daftar Angka Halaman -->
+        <div class="page-links-group mx-3">
+        @for (page of pagesArray; track $index) {
+          @if (page === '...') {
+            <span class="nav-link ellipsis">{{ page }}</span>
+          } @else {
+            <a
+              class="nav-link page-number"
+              [class.active]="currentPage === page"
+              [tabindex]="0"
+              (click)="goToPage(page)"
+              (keydown.enter)="goToPage(page)">
+              {{ page }}
+            </a>
+          }
+        }
+      </div>
+
+        <!-- Tautan Selanjutnya -->
+        <a
+          class="nav-link prev-next"
+          [class.disabled]="currentPage === totalPages"
+          [attr.aria-disabled]="currentPage === totalPages"
+          [tabindex]="currentPage === totalPages ? -1 : 0"
+          (click)="currentPage !== totalPages && goToPage(currentPage + 1)"
+          (keydown.enter)="currentPage !== totalPages && goToPage(currentPage + 1)">
+          &gt;
+        </a>
+
+        <!-- Tautan Halaman Terakhir -->
+        <a
+          class="nav-link first-last"
+          [class.disabled]="currentPage === totalPages"
+          [attr.aria-disabled]="currentPage === totalPages"
+          [tabindex]="currentPage === totalPages ? -1 : 0"
+          (click)="currentPage !== totalPages && goToPage(totalPages)"
+          (keydown.enter)="currentPage !== totalPages && goToPage(totalPages)">
+          &gt;&gt;
+        </a>
+
+      </nav>
+    </div>
+  }
 </section>
