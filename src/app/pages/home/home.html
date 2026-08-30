@@ -1,1 +1,23 @@
-<p>home works!</p>
+<section>
+  <div id="subsection" class="border-bottom border-dark-subtle">
+    <div id="dummy-carousel-img">Image Carousel</div>
+  </div>
+
+  <div id="subsection" class="container d-flex flex-column gap-4 justify-content-center align-items-center">
+    <h3 class="text m-0 pb-3">
+      PRODUCT CATEGORIES
+    </h3>
+    <div class="container m-0 p-0">
+      <div class="category-grid">
+          @for (category of categories; track $index) {
+            <div id="dummy-data" (click)="chooseCategory(category.id)">
+              <div class="category p-4" id="dummy-img">
+                <p class="m-0">{{ category.img }}</p>
+              </div>
+              <h5 class="mb-0">{{ category.desc }}</h5>
+            </div>
+          }
+      </div>
+    </div>
+  </div>
+</section>
