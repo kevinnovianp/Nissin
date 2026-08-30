@@ -11,9 +11,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class Header {
   navMenus = [
     { text: 'Home', path: '/', exact: true },
-    { text: 'Products', path: '/products', exact: false },
     { text: 'About Us', path: '/about-us', exact: false },
+    { text: 'Products', path: '/products', exact: false },
     { text: 'Our Service', path: '/our-service', exact: false },
-    { text: 'Catalog', path: '/catalog', exact: false }
   ];
 }
