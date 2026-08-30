@@ -15,8 +15,7 @@
           <li class="nav-item">
             <a class="nav-link"
               [routerLink]="menu.path"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: menu.exact }">
+              [class.active]="isMenuRouteActive(menu)">
               {{ menu.text }}
             </a>
           </li>
