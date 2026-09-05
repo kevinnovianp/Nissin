@@ -12,10 +12,8 @@
         </h5>
         <div class="product-grid">
             @for (product of paginatedProducts; track $index) {
-              <div id="dummy-data" (click)="chooseProduct(product.id)">
-                <div class="category p-4" id="dummy-img">
-                  <p class="m-0">{{ product.img }}</p>
-                </div>
+              <div id="product-data" (click)="chooseProduct(product.id)">
+                <img [src]="product.img_src" [alt]="product.name" class="product-img" />
                 <span class="mb-0 text-center">{{ product.name }}</span>
               </div>
             }

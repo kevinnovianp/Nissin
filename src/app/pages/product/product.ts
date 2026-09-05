@@ -28,15 +28,15 @@ export class Product implements OnInit, OnDestroy {
   loadProduct(id: number) {
     this.catalogService.getProductDetail(id).subscribe({
       next: (data: any) => {
-        console.log(data)
-        this.product = data;
+        this.product = {...data,
+          img_src: data.img.startsWith('http') ? data.img : this.catalogService.imgUrl + 'products/' + data.img
+        };
         this.cdr.markForCheck();
       },
       error: (err) => {
         console.error('Err: ', err);
       }
     });
-
   }
 
   ngOnDestroy() {

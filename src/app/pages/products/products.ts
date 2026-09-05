@@ -41,7 +41,12 @@ export class Products implements OnInit, OnDestroy {
       })
     ).subscribe({
       next: (data: any[]) => {
-        this.products = data;
+        this.products = data.map(product => {
+          return {
+            ...product,
+            img_src: product.img.startsWith('http') ? product.img : this.catalogService.imgUrl + 'products/' + product.img
+          };
+        });
 
         // if (data.length > 0) {
         //   this.products = Array.from({ length: 65 }, (_, index) => {

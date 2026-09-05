@@ -9,18 +9,22 @@
   font-weight: 500;
 }
 
-#dummy-data{
+#product-data{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-  & #dummy-img{
-    border: 2px dashed black;
+  .product-img {
     width: 100%;
     height: 250px;
-    display: grid;
-    place-items: center;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: ghostwhite;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
 
