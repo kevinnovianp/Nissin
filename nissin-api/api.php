@@ -15,9 +15,9 @@ $action = $_GET['action'] ?? '';
 $method = $_SERVER['REQUEST_METHOD'];
 $id = null;
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
-    $id = (int)$_POST['id']; 
+    $id = (int)$_POST['id'];
 } elseif (isset($_GET['id'])) {
-    $id = (int)$_GET['id']; 
+    $id = (int)$_GET['id'];
 }
 
 // Helper untuk Upload File Gambar
@@ -32,7 +32,7 @@ function uploadImage($file, $subDir) {
     $fileExt = pathinfo($file['name'], PATHINFO_EXTENSION);
     $fileName = uniqid() . '.' . $fileExt;
     $targetFile = $targetDir . $fileName;
-    
+
     if (move_uploaded_file($file['tmp_name'], $targetFile)) {
         return $fileName;
     }
@@ -56,8 +56,8 @@ function saveProductRelationalData($conn, $productId, $jsonString, $tableName, $
         resetTableAutoIncrement($conn, $tableName);
         foreach ($dataArray as $item) {
             $title = $item['title'] ?? '';
-            $value = $item['value'] ?? $item['desc'] ?? ''; 
-            
+            $value = $item['value'] ?? $item['desc'] ?? '';
+
             if (!empty($title)) {
                 $stmt = $conn->prepare("INSERT INTO $tableName (product_id, title, `$valueColumnName`) VALUES (?, ?, ?)");
                 $stmt->bind_param("iss", $productId, $title, $value);
@@ -73,7 +73,7 @@ function resetTableAutoIncrement($conn, $tableName) {
     $res = $conn->query("SELECT COUNT(*) as total FROM `$tableName`");
     $row = $res->fetch_assoc();
     $totalRows = (int)$row['total'];
-    
+
     // 2. Set nilai AUTO_INCREMENT baru menjadi Jumlah Baris + 1
     $nextId = $totalRows + 1;
     $conn->query("ALTER TABLE `$tableName` AUTO_INCREMENT = $nextId");
@@ -94,13 +94,13 @@ if ($action == 'categories') {
         echo json_encode($categories);
         exit;
     }
-    
+
     // --- UPDATE CATEGORY ---
     elseif ($method == 'POST' && ($id || isset($_POST['id']))) {
         // Konsolidasikan ID yang didapat agar pasti presisi
         $current_id = $id ? $id : (int)$_POST['id'];
         $desc = $_POST['desc'] ?? '';
-        
+
         if (isset($_FILES['img']) && $_FILES['img']['error'] == 0) {
             $oldRes = $conn->query("SELECT img FROM categories WHERE id = $current_id");
             $oldData = $oldRes->fetch_assoc();
@@ -124,7 +124,7 @@ if ($action == 'categories') {
     elseif ($method == 'POST') {
         $desc = $_POST['desc'] ?? '';
         $img = isset($_FILES['img']) ? uploadImage($_FILES['img'], 'categories') : '';
-        
+
         resetTableAutoIncrement($conn, 'categories');
         $stmt = $conn->prepare("INSERT INTO categories (`img`, `desc`) VALUES (?, ?)");
         $stmt->bind_param("ss", $img, $desc);
@@ -132,7 +132,7 @@ if ($action == 'categories') {
         echo json_encode(["status" => "success", "id" => $conn->insert_id]);
         exit;
     }
-    
+
     // --- DELETE CATEGORY ---
     elseif ($method == 'DELETE' && $id) {
         // Proteksi sisi backend (validasi jika masih ada produk terkait)
@@ -162,7 +162,7 @@ if ($action == 'products') {
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $product = $stmt->get_result()->fetch_assoc();
-            
+
             if ($product) {
                 $sm_res = $conn->query("SELECT title, value FROM product_specs_main WHERE product_id = $id");
                 $specs_main = []; while ($sm = $sm_res->fetch_assoc()) { $specs_main[] = $sm; }
@@ -229,7 +229,7 @@ if ($action == 'products') {
             echo json_encode($products);
         }
     }
-    
+
     // ADD PRODUCT
     elseif ($method == 'POST' && !$id) {
         $name = $_POST['name'] ?? '';
@@ -253,7 +253,7 @@ if ($action == 'products') {
 
         echo json_encode(["status" => "success"]);
     }
-    
+
     // UPDATE PRODUCT
     elseif ($method == 'POST' && $id) {
         $name = $_POST['name'] ?? '';
@@ -276,7 +276,7 @@ if ($action == 'products') {
             if ($oldData) {deleteOldImage($oldData['img'], 'products');}
         } else {
             $stmt = $conn->prepare("UPDATE products SET name=?, model=?, category_id=?, desc_1=?, desc_2=?, intro_1=?, intro_2=? WHERE id=?");
-            $stmt->bind_param("sssisssi", $name, $model, $category_id, $desc_1, $desc_2, $intro_1, $intro_2, $id);
+            $stmt->bind_param("ssissssi", $name, $model, $category_id, $desc_1, $desc_2, $intro_1, $intro_2, $id);
             $stmt->execute();
         }
 
@@ -289,7 +289,7 @@ if ($action == 'products') {
         saveProductRelationalData($conn, $id, $_POST['specs_other'] ?? '[]', 'product_specs_other', 'value');
         echo json_encode(["status" => "updated"]);
     }
-    
+
     // DELETE PRODUCT
     elseif ($method == 'DELETE' && $id) {
         $oldRes = $conn->query("SELECT img FROM products WHERE id = $id");
@@ -364,10 +364,10 @@ if ($action == 'generate-file') {
         // Matikan error reporting agar biner teks tidak terpolusi warning
         error_reporting(0);
         ini_set('display_errors', 0);
-        
+
         // Ambil data semua kategori
         $cat_res = $conn->query("SELECT * FROM categories ORDER BY id ASC");
-        
+
         // Inisialisasi isi teks katalog
         $txt_content = "========================================================\n";
         $txt_content .= "         RINGKASAN KATALOG KATEGORI & PRODUK            \n";
@@ -380,7 +380,7 @@ if ($action == 'generate-file') {
 
             // Ambil data produk anak yang berelasi
             $prod_res = $conn->query("SELECT * FROM products WHERE category_id = $cat_id");
-            
+
             if ($prod_res->num_rows == 0) {
                 $txt_content .= "  (Belum ada produk di dalam kategori ini)\n";
             } else {
