@@ -1,9 +1,9 @@
 <section>
-  <div id="mainCarousel" class="carousel slide border-bottom border-dark-subtle" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+  <div id="mainCarousel" class="carousel slide border-bottom border-dark-subtle position-relative" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
 
   <!-- Indikator Bulatan Kecil di Bawah (Hanya muncul jika data sudah ada) -->
   @if (carousels && carousels.length > 0) {
-    <div class="carousel-indicators">
+    <div class="carousel-indicators z-3 mb-5">
       @for (carousel of carousels; track $index) {
         <button type="button" data-bs-target="#mainCarousel" [attr.data-bs-slide-to]="$index" [class.active]="$index === 0" [attr.aria-current]="$index === 0 ? 'true' : null"></button>
       }
