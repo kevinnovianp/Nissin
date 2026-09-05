@@ -30,14 +30,7 @@ export class Products implements OnInit, OnDestroy {
       switchMap(params => {
         let categoryId = params.get('category');
         this.currentPage = 1;
-
-        if (categoryId) {
-          console.log(`Mengambil produk untuk kategori ID: ${categoryId}`);
-          return this.catalogService.getProducts(Number(categoryId));
-        } else {
-          console.log('Tidak ada query param, mengambil seluruh produk.');
-          return this.catalogService.getProducts();
-        }
+        return categoryId ? this.catalogService.getProducts(Number(categoryId)) : this.catalogService.getProducts();
       })
     ).subscribe({
       next: (data: any[]) => {

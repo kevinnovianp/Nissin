@@ -44,7 +44,6 @@ export class Home implements OnInit {
       })
     ).subscribe({
       next: (data: any[]) => {
-        console.log(data)
         this.categories = data;
         this.cdr.markForCheck();
       },
