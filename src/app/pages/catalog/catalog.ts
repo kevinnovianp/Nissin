@@ -106,7 +106,7 @@ export class Catalog implements OnInit {
 
         const link = document.createElement('a');
         link.href = blobUrl;
-        link.download = 'ringkasan-katalog-produk.txt'; // Simpan sebagai berkas .txt
+        link.download = 'Catalog - NISSIN.txt';
 
         document.body.appendChild(link);
         link.click();

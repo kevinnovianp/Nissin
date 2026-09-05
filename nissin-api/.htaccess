@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# 1. Aturan request berupa file atau direktori nyata
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 2. Aturan untuk Detail Objek via Path (Untuk GET detail produk / DELETE yang metodenya murni)
+RewriteRule ^carousels/([0-9]+)$ api.php?action=carousels&id=$1 [QSA,L]
+RewriteRule ^categories/([0-9]+)$ api.php?action=categories&id=$1 [QSA,L]
+RewriteRule ^products/([0-9]+)$ api.php?action=products&id=$1 [QSA,L]
+
+# 3. Aturan Koleksi Umum (Ini yang akan menangkap /categories?id=7)
+RewriteRule ^carousels$ api.php?action=carousels [QSA,L]
+RewriteRule ^categories$ api.php?action=categories [QSA,L]
+RewriteRule ^products$ api.php?action=products [QSA,L]
+
+# 4. Aturan untuk Generate File Catalog
+RewriteRule ^generate-file$ api.php?action=generate-file [QSA,L]
