@@ -90,4 +90,34 @@ export class Catalog implements OnInit {
       this.catalogService.deleteProduct(id).subscribe(() => this.loadData());
     }
   }
+
+  exportCatalog(): void {
+    const currentData = this.categories();
+
+    if (currentData.length === 0) {
+      alert("No available data for export!");
+      return;
+    }
+
+    this.catalogService.downloadCatalog().subscribe({
+      next: (responseBlob: Blob) => {
+        const cleanTxtBlob = new Blob([responseBlob], { type: 'text/plain;charset=utf-8' });
+        const blobUrl = window.URL.createObjectURL(cleanTxtBlob);
+
+        const link = document.createElement('a');
+        link.href = blobUrl;
+        link.download = 'ringkasan-katalog-produk.txt'; // Simpan sebagai berkas .txt
+
+        document.body.appendChild(link);
+        link.click();
+
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(blobUrl);
+      },
+      error: (err) => {
+        console.error("Err: ", err);
+        alert("There is an internal issue with the XAMPP server while processing the text catalog file!");
+      }
+    });
+  }
 }

@@ -49,4 +49,11 @@ export class CatalogService {
   deleteProduct(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/products/${id}`);
   }
+
+  // --- GENERATE PDF ---
+  downloadCatalog(): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/generate-file`, {
+      responseType: 'blob'
+    });
+  }
 }
