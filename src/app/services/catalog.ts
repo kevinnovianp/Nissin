@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class Catalog {
   private apiUrl = 'http://localhost/nissin-api';
+  readonly imgUrl = 'http://localhost/nissin-api/uploads/';
+
   private http = inject(HttpClient);
 
   getCategories(): Observable<any[]> {
@@ -23,5 +25,9 @@ export class Catalog {
 
   getProductDetail(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/products/${id}`);
+  }
+
+  getCarousels(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/carousels`);
   }
 }

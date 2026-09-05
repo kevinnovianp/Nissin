@@ -11,7 +11,7 @@ import { Catalog } from '../../services/catalog';
 })
 export class Product implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
-  private catalogService = inject(Catalog);
+  public catalogService = inject(Catalog);
   private cdr = inject(ChangeDetectorRef);
   private sub?: Subscription;
 

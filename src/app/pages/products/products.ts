@@ -12,7 +12,7 @@ import { Catalog } from '../../services/catalog';
 export class Products implements OnInit, OnDestroy {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
-  private catalogService = inject(Catalog);
+  public catalogService = inject(Catalog);
   private cdr = inject(ChangeDetectorRef);
   private sub?: Subscription;
 

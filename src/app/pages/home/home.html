@@ -1,7 +1,42 @@
 <section>
-  <div id="subsection" class="border-bottom border-dark-subtle">
-    <div id="dummy-carousel-img">Image Carousel</div>
+  <div id="mainCarousel" class="carousel slide border-bottom border-dark-subtle" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+
+  <!-- Indikator Bulatan Kecil di Bawah (Hanya muncul jika data sudah ada) -->
+  @if (carousels && carousels.length > 0) {
+    <div class="carousel-indicators">
+      @for (carousel of carousels; track $index) {
+        <button type="button" data-bs-target="#mainCarousel" [attr.data-bs-slide-to]="$index" [class.active]="$index === 0" [attr.aria-current]="$index === 0 ? 'true' : null"></button>
+      }
+    </div>
+  }
+
+  <!-- Konten Gambar -->
+  <div class="carousel-inner">
+    @for (carousel of carousels; track $index) {
+      <div class="carousel-item" [class.active]="$index === 0">
+        <img [src]="carousel.img_src" class="d-block w-100 carousel-landscape-img" [alt]="carousel.title || 'Carousel Image'">
+      </div>
+    } @empty {
+      <div class="carousel-item active">
+        <div class="carousel-placeholder d-flex justify-content-center align-items-center">
+          <span>Loading Carousel...</span>
+        </div>
+      </div>
+    }
   </div>
+
+  <!-- Tombol Navigasi Kiri & Kanan (Hanya muncul jika data sudah ada) -->
+  @if (carousels && carousels.length > 0) {
+    <button class="carousel-control-prev start-0 w-auto px-3" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next end-0 w-auto px-3" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  }
+</div>
 
   <div id="subsection" class="container d-flex flex-column gap-4 justify-content-center align-items-center">
     <h3 class="text m-0 pb-3">
@@ -10,9 +45,9 @@
     <div class="container m-0 p-0">
       <div class="category-grid">
           @for (category of categories; track $index) {
-            <div id="dummy-data" (click)="chooseCategory(category.id)">
-              <div class="category p-4" id="dummy-img">
-                <p class="m-0">{{ category.img }}</p>
+            <div id="category-data" (click)="chooseCategory(category.id)">
+              <div class="category-img-wrapper p-3">
+                <img [src]="category.img_src" [alt]="category.desc" class="category-thumb">
               </div>
               <h5 class="mb-0 text-center">{{ category.desc }}</h5>
             </div>
