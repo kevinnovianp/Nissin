@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, switchMap } from 'rxjs';
-import { Catalog } from '../../services/catalog';
+import { CatalogService } from '../../services/catalog';
 
 @Component({
   imports: [],
@@ -12,7 +12,7 @@ import { Catalog } from '../../services/catalog';
 export class Products implements OnInit, OnDestroy {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
-  public catalogService = inject(Catalog);
+  public catalogService = inject(CatalogService);
   private cdr = inject(ChangeDetectorRef);
   private sub?: Subscription;
 
@@ -37,7 +37,7 @@ export class Products implements OnInit, OnDestroy {
         this.products = data.map(product => {
           return {
             ...product,
-            img_src: product.img.startsWith('http') ? product.img : this.catalogService.imgUrl + 'products/' + product.img
+            img_src: this.catalogService.imgUrl + 'products/' + product.img
           };
         });
 

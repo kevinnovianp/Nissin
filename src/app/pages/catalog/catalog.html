@@ -1,1 +1,136 @@
-<p>catalog works!</p>
+<div class="container my-5">
+  <!-- ================= TABEL 1: CAROUSELS ================= -->
+  <div class="card shadow-sm mb-5">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0"><i class="bi bi-images me-2"></i>List Carousels</h5>
+      <button class="btn btn-sm btn-success" (click)="navigateToAdd('carousel')">+ Add Carousel</button>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="table-light">
+          <tr>
+            <th style="width: 80px;">ID</th>
+            <th style="width: 400px;">Preview Image</th>
+            <th>Title</th>
+            <th class="text-end" style="width: 180px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (c of carousels(); track c.id) {
+            <tr>
+              <td>{{ c.id }}</td>
+              <td>
+                <img [src]="c.img_src" alt="Carousel" class="img-thumbnail" style="max-height: 100px;">
+              </td>
+              <td><span class="text-muted" *ngIf="!c.title">No Title</span>{{ c.title }}</td>
+              <td class="text-end">
+                <button class="btn btn-sm btn-outline-primary me-2" (click)="navigateToUpdate('carousel', c.id)">Edit</button>
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteCarousel(c.id)">Delete</button>
+              </td>
+            </tr>
+          } @empty {
+            <tr><td colspan="4" class="text-center text-muted py-4">No data found</td></tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ================= TABEL 2: CATEGORIES & NESTED PRODUCTS ================= -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0"><i class="bi bi-tags me-2"></i>List Categories & Products</h5>
+      <div class="btn-group">
+        <button class="btn btn-sm btn-success me-2" (click)="navigateToAdd('category')">+ Add Category</button>
+        <button class="btn btn-sm btn-info text-white" (click)="navigateToAdd('product')">+ Add Product</button>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table align-middle mb-0">
+        <thead class="table-light">
+          <tr>
+            <th style="width: 50px;"></th>
+            <th style="width: 80px;">ID</th>
+            <th style="width: 120px;">Image</th>
+            <th>Category Name</th>
+            <th class="text-center" style="width: 150px;">Total Products</th>
+            <th class="text-end" style="width: 180px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (cat of categories(); track cat.id) {
+            <!-- Baris Utama Kategori -->
+            <tr class="table-active-row">
+              <td>
+                <button class="btn btn-sm btn-light border" type="button"
+                        data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse-cat-' + cat.id">
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+              </td>
+              <td>{{ cat.id }}</td>
+              <td>
+                <img [src]="cat.img_src" alt="Category" class="img-thumbnail" style="width: 45px; height: 45px; object-fit: cover;">
+              </td>
+              <td class="fw-bold text-secondary">{{ cat.desc }}</td>
+              <td class="text-center">
+                <span class="badge bg-pill bg-secondary">{{ cat.products?.length || 0 }}</span>
+              </td>
+              <td class="text-end">
+                <button class="btn btn-sm btn-outline-primary me-2" (click)="navigateToUpdate('category', cat.id)">Edit</button>
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteCategory(cat)">Delete</button>
+              </td>
+            </tr>
+
+            <!-- Baris Dropdown Collapse berisi Sub-Tabel Produk -->
+            <tr>
+              <td colspan="6" class="p-0 border-0">
+                <div [id]="'collapse-cat-' + cat.id" class="collapse bg-light p-3">
+                  <div class="card card-body border-0 shadow-inner">
+                    <h6 class="text-primary mb-3"><i class="bi bi-box-seam me-2"></i>List Products in Category "{{ cat.desc }}"</h6>
+
+                    <table class="table table-sm table-hover align-middle bg-white mb-0">
+                      <thead class="table-warning">
+                        <tr>
+                          <th style="width: 100px;">Image</th>
+                          <th>Product Name</th>
+                          <th>Model / Code</th>
+                          <th>Short Description</th>
+                          <th class="text-end" style="width: 150px;">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @for (p of cat.products; track p.id) {
+                          <tr>
+                            <td>
+                              <img [src]="p.img_src" alt="Product" class="img-thumbnail" style="max-height: 45px;">
+                            </td>
+                            <td class="fw-semibold">{{ p.name }}</td>
+                            <td><span class="badge bg-light text-dark border">{{ p.model }}</span></td>
+                            <td class="text-truncate" style="max-width: 250px;">{{ p.desc_1 }}</td>
+                            <td class="text-end">
+                              <button class="btn btn-xs btn-link text-primary p-1 me-2" (click)="navigateToUpdate('product', p.id)">
+                                <i class="bi bi-pencil-square"></i> Edit
+                              </button>
+                              <button class="btn btn-xs btn-link text-danger p-1" (click)="deleteProduct(p.id)">
+                                <i class="bi bi-trash"></i> Delete
+                              </button>
+                            </td>
+                          </tr>
+                        } @empty {
+                          <tr><td colspan="5" class="text-center text-muted py-3">No data found</td></tr>
+                        }
+                      </tbody>
+                    </table>
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+          } @empty {
+            <tr><td colspan="6" class="text-center text-muted py-4">No data found</td></tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

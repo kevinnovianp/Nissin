@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Catalog } from '../../services/catalog';
+import { CatalogService } from '../../services/catalog';
 import { map, Observable } from 'rxjs';
 
 @Component({
@@ -12,7 +12,7 @@ import { map, Observable } from 'rxjs';
 export class Home implements OnInit {
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
-  public catalogService = inject(Catalog);
+  public catalogService = inject(CatalogService);
 
   carousels: any[] = [];
   categories :any[] = [];
@@ -22,7 +22,7 @@ export class Home implements OnInit {
       map((data: any[]) => {
         return data.map(carousel => ({
           ...carousel,
-          img_src: carousel.img.startsWith('http') ? carousel.img : this.catalogService.imgUrl + 'carousels/' + carousel.img
+          img_src: this.catalogService.imgUrl + 'carousels/' + carousel.img
         }));
       })
     )
@@ -39,7 +39,7 @@ export class Home implements OnInit {
     this.catalogService.getCategories().pipe(
       map((data: any[]) => {
         return data.map(category => ({...category,
-          img_src: category.img.startsWith('http') ? category.img : this.catalogService.imgUrl + 'categories/' + category.img
+          img_src: this.catalogService.imgUrl + 'categories/' + category.img
         }));
       })
     ).subscribe({

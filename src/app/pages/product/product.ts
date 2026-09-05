@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Catalog } from '../../services/catalog';
+import { CatalogService } from '../../services/catalog';
 
 @Component({
   imports: [],
@@ -11,7 +11,7 @@ import { Catalog } from '../../services/catalog';
 })
 export class Product implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
-  public catalogService = inject(Catalog);
+  public catalogService = inject(CatalogService);
   private cdr = inject(ChangeDetectorRef);
   private sub?: Subscription;
 
@@ -29,7 +29,7 @@ export class Product implements OnInit, OnDestroy {
     this.catalogService.getProductDetail(id).subscribe({
       next: (data: any) => {
         this.product = {...data,
-          img_src: data.img.startsWith('http') ? data.img : this.catalogService.imgUrl + 'products/' + data.img
+          img_src: this.catalogService.imgUrl + 'products/' + data.img
         };
         this.cdr.markForCheck();
       },

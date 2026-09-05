@@ -1,0 +1,169 @@
+<div class="container my-5" style="max-width: 700px;">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-dark text-white p-3">
+      <h5 class="mb-0 fw-bold">
+        <i class="bi bi-pencil-square me-2"></i>
+        {{ isEdit ? 'Update Data' : 'Add Data' }} {{ type | titlecase }}
+      </h5>
+    </div>
+    <div class="card-body p-4">
+      <form (submit)="$event.preventDefault(); onSave()">
+
+        <!-- ================= INPUT UNTUK CAROUSEL ================= -->
+        @if (type === 'carousel') {
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Title</label>
+            <input type="text" class="form-control" [(ngModel)]="formData().title" name="title" placeholder="input title...">
+          </div>
+        }
+
+        <!-- ================= INPUT UNTUK CATEGORY ================= -->
+        @if (type === 'category') {
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Description</label>
+            <input type="text" class="form-control" [(ngModel)]="formData().desc" name="desc" required placeholder="e.g. Biskuit Wafer">
+          </div>
+        }
+
+        <!-- ================= INPUT UNTUK PRODUCT ================= -->
+        @if (type === 'product') {
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-semibold">Name</label>
+              <input type="text" class="form-control" [(ngModel)]="formData().name" name="name" required placeholder="input name...">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-semibold">Model / Serial Number</label>
+              <input type="text" class="form-control" [(ngModel)]="formData().model" name="model" required placeholder="e.g., NS-01">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Category</label>
+            <select class="form-select" [(ngModel)]="formData().category_id" name="category_id" required>
+              <option value="">-- choose --</option>
+              @for (cat of categoriesList(); track cat.id) {
+                <option [value]="cat.id">{{ cat.desc }}</option>
+              }
+            </select>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-semibold">Short Description 1</label>
+              <textarea class="form-control" [(ngModel)]="formData().desc_1" name="desc_1" rows="2"></textarea>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-semibold">Short Description 2</label>
+              <textarea class="form-control" [(ngModel)]="formData().desc_2" name="desc_2" rows="2"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-semibold">Product Introduction 1</label>
+              <textarea class="form-control" [(ngModel)]="formData().intro_1" name="intro_1" rows="2"></textarea>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label fw-semibold">Product Introduction 2</label>
+              <textarea class="form-control" [(ngModel)]="formData().intro_2" name="intro_2" rows="2"></textarea>
+            </div>
+          </div>
+
+          <!-- ================= 1. DINAMIS PRODUCT FEATURES ================= -->
+          <div class="card bg-light border-0 mb-4 mt-4 shadow-sm">
+            <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center py-2">
+              <span class="fw-semibold"><i class="bi bi-star me-2"></i>Product Features</span>
+              <button type="button" class="btn btn-sm btn-light" (click)="addFeature()">+ Add Feature</button>
+            </div>
+            <div class="card-body">
+              @for (item of features(); track $index; let i = $index) {
+                <div class="row g-2 align-items-center mb-2">
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="item.title" name="f_title_{{i}}" required placeholder="feature title...">
+                  </div>
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="item.desc" name="f_desc_{{i}}" required placeholder="brief feature description...">
+                  </div>
+                  <div class="col-sm-1 text-end">
+                    <button type="button" class="btn btn-sm btn-outline-danger border-0" (click)="removeFeature(i)"><i class="bi bi-trash"></i></button>
+                  </div>
+                </div>
+              } @empty {
+                <p class="text-muted text-center mb-0 py-2 small">No data found</p>
+              }
+            </div>
+          </div>
+
+          <!-- ================= 2. DINAMIS PRODUCT SPECS MAIN ================= -->
+          <div class="card bg-light border-0 mb-4 shadow-sm">
+            <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center py-2">
+              <span class="fw-semibold"><i class="bi bi-gear-wide-connected me-2"></i>Main Specifications</span>
+              <button type="button" class="btn btn-sm btn-light" (click)="addSpecMain()">+ Add Specification</button>
+            </div>
+            <div class="card-body">
+              @for (item of specsMain(); track $index; let i = $index) {
+                <div class="row g-2 align-items-center mb-2">
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="item.title" name="sm_title_{{i}}" required placeholder="parameter (e.g., Voltage)">
+                  </div>
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="item.value" name="sm_val_{{i}}" required placeholder="value (e.g., 220 Volt)">
+                  </div>
+                  <div class="col-sm-1 text-end">
+                    <button type="button" class="btn btn-sm btn-outline-danger border-0" (click)="removeSpecMain(i)"><i class="bi bi-trash"></i></button>
+                  </div>
+                </div>
+              } @empty {
+                <p class="text-muted text-center mb-0 py-2 small">No data found</p>
+              }
+            </div>
+          </div>
+
+          <!-- ================= 3. DINAMIS PRODUCT SPECS OTHER ================= -->
+          <div class="card bg-light border-0 mb-4 shadow-sm">
+            <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center py-2">
+              <span class="fw-semibold"><i class="bi bi-info-square me-2"></i>Other Specifications</span>
+              <button type="button" class="btn btn-sm btn-light" (click)="addSpecOther()">+ Add Specification</button>
+            </div>
+            <div class="card-body">
+              @for (item of specsOther(); track $index; let i = $index) {
+                <div class="row g-2 align-items-center mb-2">
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="item.title" name="so_title_{{i}}" required placeholder="parameter (e.g., Net Weight)">
+                  </div>
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="item.value" name="so_val_{{i}}" required placeholder="value (e.g., 15 Kg)">
+                  </div>
+                  <div class="col-sm-1 text-end">
+                    <button type="button" class="btn btn-sm btn-outline-danger border-0" (click)="removeSpecOther(i)"><i class="bi bi-trash"></i></button>
+                  </div>
+                </div>
+              } @empty {
+                <p class="text-muted text-center mb-0 py-2 small">No data found</p>
+              }
+            </div>
+          </div>
+        }
+
+        <!-- ================= GLOBAL FILE UPLOAD (WAJIB ADD, OPSIONAL UPDATE) ================= -->
+        <div class="mb-4 bg-light p-3 rounded border">
+          <label class="form-label fw-semibold d-block">File Image (.jpg / .png)</label>
+          <input type="file" class="form-control" (change)="onFileChange($event)" [required]="!isEdit">
+          @if (isEdit) {
+            <div class="form-text text-muted mt-1"><i class="bi bi-info-circle"></i> Let it empty if you don't want to replace the existing image.</div>
+          }
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="d-flex justify-content-end border-top pt-3">
+          <a routerLink="/catalog" class="btn btn-outline-secondary me-2">Back</a>
+          <button type="submit" class="btn btn-primary px-4">
+            <i class="bi bi-save me-1"></i> Save
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
