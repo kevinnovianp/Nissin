@@ -11,7 +11,9 @@
         {{ product?.desc_2 }}
       </p>
     </div>
-    <img [src]="product.img_src" [alt]="product.name" id="product-img" />
+    <div id="product-img-container">
+      <img [src]="product.img_src" [alt]="product.name" id="product-img" />
+    </div>
   </div>
 
   <div id="subsection" class="container d-flex flex-column flex-md-row gap-4 justify-content-between border-bottom border-dark-subtle">

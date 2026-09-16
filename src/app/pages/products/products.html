@@ -13,7 +13,9 @@
         <div class="product-grid">
             @for (product of paginatedProducts; track $index) {
               <div id="product-data" (click)="chooseProduct(product.id)">
-                <img [src]="product.img_src" [alt]="product.name" class="product-img" />
+                <div id="product-img-card">
+                  <img [src]="product.img_src" [alt]="product.name" class="product-img" />
+                </div>
                 <span class="mb-0 text-center">{{ product.name }}</span>
               </div>
             }
