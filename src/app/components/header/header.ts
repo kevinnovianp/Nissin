@@ -25,7 +25,6 @@ export class Header {
     { text: 'Home', path: '/', exact: true },
     { text: 'About Us', path: '/about-us', exact: false },
     { text: 'Products', path: '/products', exact: false },
-    { text: 'Our Service', path: '/our-service', exact: false },
     { text: 'Catalog', path: '/catalog', exact: false },
   ];
 
