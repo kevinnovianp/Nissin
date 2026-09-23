@@ -1,10 +1,10 @@
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CatalogService } from '../../services/catalog';
-import { map, Observable } from 'rxjs';
+import { map, firstValueFrom  } from 'rxjs';
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-home',
   styleUrl: './home.scss',
   templateUrl: './home.html',
@@ -16,44 +16,56 @@ export class Home implements OnInit {
 
   carousels: any[] = [];
   categories :any[] = [];
+  latestProducts : any[] = [];
 
-  ngOnInit() {
-    this.catalogService.getCarousels().pipe(
-      map((data: any[]) => {
-        return data.map(carousel => ({
-          ...carousel,
-          img_src: this.catalogService.imgUrl + 'carousels/' + carousel.img
-        }));
-      })
-    )
-    .subscribe({
-      next: (data: any[]) => {
-        this.carousels = data;
-        this.cdr.markForCheck();
-      },
-      error: (err) => {
-        console.error('Err: ', err);
-      }
-    });
+  async ngOnInit() {
+    try{
+      const carouselsData = await firstValueFrom(
+        this.catalogService.getCarousels().pipe(
+          map((data: any[]) =>
+            data.map(carousel => ({
+              ...carousel,
+              img_src: this.catalogService.imgUrl + 'carousels/' + carousel.img
+            }))
+          )
+        )
+      );
+      this.carousels = carouselsData;
+      this.cdr.markForCheck();
 
-    this.catalogService.getCategories().pipe(
-      map((data: any[]) => {
-        return data.map(category => ({...category,
-          img_src: this.catalogService.imgUrl + 'categories/' + category.img
-        }));
-      })
-    ).subscribe({
-      next: (data: any[]) => {
-        this.categories = data;
-        this.cdr.markForCheck();
-      },
-      error: (err) => {
-        console.error('Err: ', err);
-      }
-    });
+      const categoriesData = await firstValueFrom(
+        this.catalogService.getCategories().pipe(
+          map((data: any[]) =>
+            data.map(category => ({
+              ...category,
+              img_src: this.catalogService.imgUrl + 'categories/' + category.img
+            }))
+          )
+        )
+      );
+      this.categories = categoriesData;
+      this.cdr.markForCheck();
+
+      const productsData = await firstValueFrom(this.catalogService.getLatestProducts());
+      this.latestProducts = productsData.map(product => {
+        const category = this.categories.find(c => c.id === product.category_id);
+        return {
+          ...product,
+          category_name: category.desc
+        };
+      });
+      this.cdr.markForCheck();
+
+    } catch (err) {
+      console.error('Terjadi kesalahan saat memuat data: ', err);
+    }
   }
 
   chooseCategory(id: number) {
     this.router.navigate(['/products'], { queryParams: { category: id } });
+  }
+
+  chooseProduct(id: number) {
+    this.router.navigate(['/product'], { queryParams: { id: id } });
   }
 }

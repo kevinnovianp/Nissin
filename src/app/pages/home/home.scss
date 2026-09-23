@@ -1,10 +1,17 @@
-#subsection, #mainCarousel {
+#subsection {
   padding: 48px 0;
+}
+
+#mainCarousel {
+  width: 98.8vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .carousel-landscape-img {
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
   object-position: center;
 }
@@ -14,6 +21,38 @@
   height: 400px;
   background-color: #f8f9fa;
   border: 2px dashed #dee2e6;
+}
+
+.product-category{
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 98.8vw;
+    height: 100%;
+    background-image: url('/images/bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: -1;
+  }
+}
+
+.about-us-content{
+  border: none;
+  flex: 1 1 0%;
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background-color: transparent;
+  & img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
 }
 
 .category-grid {

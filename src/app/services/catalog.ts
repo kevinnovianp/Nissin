@@ -23,6 +23,9 @@ export class CatalogService {
     if (categoryId) url += `?category_id=${categoryId}`;
     return this.http.get<any[]>(url);
   }
+  getLatestProducts(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/products/latest`);
+  }
   getProductDetail(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/products/${id}`);
   }
