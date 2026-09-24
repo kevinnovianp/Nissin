@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2026 at 05:26 PM
+-- Generation Time: Sep 16, 2026 at 04:15 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -38,7 +38,7 @@ CREATE TABLE `carousels` (
 --
 
 INSERT INTO `carousels` (`id`, `title`, `img`) VALUES
-(1, 'Carousel 1', 'carousel-1.jpg'),
+(1, 'Carousel 1', '6a9c5c0c25cb4.jpg'),
 (2, 'Carousel 2', 'carousel-2.jpg'),
 (3, 'Carousel 3', 'carousel-3.jpg'),
 (4, 'Carousel 4', 'carousel-4.jpg');
@@ -103,7 +103,7 @@ INSERT INTO `products` (`id`, `img`, `name`, `model`, `category_id`, `desc_1`, `
 (10, 'table1.jpg', 'Nissin Prep Table Refrigerator', 'NPT-120', 5, 'Meja kerja dapur dengan pendingin.', 'Stainless steel food-grade.', 'Meja Preparasi Dapur', 'Menjaga bahan topping tetap dingin saat diracik.'),
 (11, 'mixer1.jpg', 'Nissin Planetary Mixer 20L', 'NPM-20', 6, 'Mixer adonan roti kapasitas 20 liter.', '3 pilihan kecepatan putaran.', 'Mixer Adonan Kuat', 'Mampu mengaduk adonan kalis volume besar.'),
 (12, 'slicer1.jpg', 'Nissin Meat Slicer Pro', 'NMS-250', 6, 'Mesin pengiris daging tipis otomatis.', 'Diameter pisau potong 250 mm.', 'Irisan Daging Presisi', 'Ketebalan irisan dapat diatur sesuai kebutuhan.'),
-(13, 'ice1.jpg', 'Nissin Cube Ice Maker 50kg', 'NIM-50C', 7, 'Mesin pembuat es batu kristal kotak.', 'Produksi 50 kg es per hari.', 'Es Kristal Higienis', 'Dilengkapi bin penampung es internal.'),
+(13, 'ice1.jpg', 'Nissin Cube Ice Maker 50kg', 'NIM-50', 7, 'Lorem Ipsum', 'Produksi 50 kg es per hari.', 'Es Kristal Higienis', 'Dilengkapi bin penampung es internal.'),
 (14, 'ice2.jpg', 'Nissin Flake Ice Maker', 'NIM-100F', 7, 'Mesin pembuat es serut untuk ikan.', 'Produksi es serut halus.', 'Pendingin Hasil Laut', 'Menjaga ikan tetap segar di supermarket.');
 
 -- --------------------------------------------------------
@@ -320,37 +320,37 @@ ALTER TABLE `product_specs_other`
 -- AUTO_INCREMENT for table `carousels`
 --
 ALTER TABLE `carousels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `product_features`
 --
 ALTER TABLE `product_features`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `product_specs_main`
 --
 ALTER TABLE `product_specs_main`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `product_specs_other`
 --
 ALTER TABLE `product_specs_other`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Constraints for dumped tables

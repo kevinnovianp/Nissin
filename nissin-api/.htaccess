@@ -8,6 +8,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^carousels/([0-9]+)$ api.php?action=carousels&id=$1 [QSA,L]
 RewriteRule ^categories/([0-9]+)$ api.php?action=categories&id=$1 [QSA,L]
 RewriteRule ^products/([0-9]+)$ api.php?action=products&id=$1 [QSA,L]
+RewriteRule ^products/latest$ api.php?action=products&latest=true [QSA,L]
 
 # 3. Aturan Koleksi Umum (Ini yang akan menangkap /categories?id=7)
 RewriteRule ^carousels$ api.php?action=carousels [QSA,L]
