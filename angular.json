@@ -63,6 +63,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "allowedHosts": ["zw7ljebf1t.preview.c37.airoapp.ai"]
+          },
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
