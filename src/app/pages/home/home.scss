@@ -96,6 +96,14 @@
   .category-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .custom-col-img {
+    flex: 0 0 60% !important;
+    max-width: 60% !important;
+  }
+  .custom-col-text {
+    flex: 0 0 40% !important;
+    max-width: 40% !important;
+  }
 }
 
 @media (max-width: 768px) {
