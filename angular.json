@@ -70,7 +70,8 @@
           "options": {
             "allowedHosts": [
               "zw7ljebf1t.preview.c37.airoapp.ai",
-              "mo1jmvhp35.preview.c24.airoapp.ai"
+              "mo1jmvhp35.preview.c24.airoapp.ai",
+              "1u01iblp54.preview.c37.airoapp.ai"
             ]
           },
           "builder": "@angular/build:dev-server",
