@@ -9,9 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 $host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "Nissin";
+$dbname = "nissin_db";
+$user = "nissin_user";
+$password = "nissinequipment";
 
 $conn = new mysqli($host, $user, $password, $dbname);
 
