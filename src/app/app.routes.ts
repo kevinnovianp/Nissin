@@ -4,7 +4,6 @@ import { AboutUs } from './pages/about-us/about-us';
 import { Catalog } from './pages/catalog/catalog';
 import { Products } from './pages/products/products';
 import { Product } from './pages/product/product';
-import { CatalogForm } from './pages/catalog-form/catalog-form';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -12,6 +11,4 @@ export const routes: Routes = [
   { path: 'product', component: Product },
   { path: 'about-us', component: AboutUs },
   { path: 'catalog', component: Catalog },
-  { path: 'catalog-form/:type', component: CatalogForm },
-  { path: 'catalog-form/:type/:id', component: CatalogForm }
 ];

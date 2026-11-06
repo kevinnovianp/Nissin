@@ -20,17 +20,7 @@ export class Home implements OnInit {
 
   async ngOnInit() {
     try{
-      const carouselsData = await firstValueFrom(
-        this.catalogService.getCarousels().pipe(
-          map((data: any[]) =>
-            data.map(carousel => ({
-              ...carousel,
-              img_src: this.catalogService.imgUrl + 'carousels/' + carousel.img
-            }))
-          )
-        )
-      );
-      this.carousels = carouselsData;
+      this.carousels = await firstValueFrom(this.catalogService.getCarousels());
       this.cdr.markForCheck();
 
       const categoriesData = await firstValueFrom(

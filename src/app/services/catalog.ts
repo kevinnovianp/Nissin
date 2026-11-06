@@ -2,23 +2,31 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CatalogService {
   private apiUrl = environment.apiUrl;
-  readonly imgUrl = `${environment.apiUrl}/uploads/`;
+  readonly imgUrl = 'images';
 
   private http = inject(HttpClient);
+
+  // CAROUSEL
+  getCarousels(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.imgUrl}/carousels/images.json`).pipe(
+      map(fileNames => fileNames.map(name => `${this.imgUrl}/carousels/${name}`))
+    );
+  }
 
   // --- READ GET ---
   getCategories(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/categories`);
   }
-  getCarousels(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/carousels`);
-  }
+  // getCarousels(): Observable<any[]> {
+  //   return this.http.get<any[]>(`${this.apiUrl}/carousels`);
+  // }
   getProducts(categoryId?: number): Observable<any[]> {
     let url = `${this.apiUrl}/products`;
     if (categoryId) url += `?category_id=${categoryId}`;

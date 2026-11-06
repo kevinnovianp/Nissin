@@ -12,9 +12,9 @@
 
     <!-- Konten Gambar -->
     <div class="carousel-inner">
-      @for (carousel of carousels; track $index) {
+      @for (path of carousels; track path; let i = $index) {
         <div class="carousel-item" [class.active]="$index === 0">
-          <img [src]="carousel.img_src" class="d-block w-100 carousel-landscape-img" [alt]="carousel.title || 'Carousel Image'">
+          <img [src]="path" class="d-block w-100 carousel-landscape-img" alt="Carousel Image">
         </div>
       } @empty {
         <div class="carousel-item active">
