@@ -1,0 +1,266 @@
+[
+  {
+    "id": 1,
+    "product_id": 2,
+    "title": "Dual Solid Door Configuration",
+    "desc": "A cover design with two separate doors that helps minimize the loss of cold air when one door is opened, ensuring a stable internal temperature and more efficient energy consumption."
+  },
+  {
+    "id": 2,
+    "product_id": 2,
+    "title": "Rapid Cooling System",
+    "desc": "Powered by advanced compressor technology and eco-friendly refrigerant to rapidly lower the temperature down to -22°C, ensuring even food freezing all the way to the core."
+  },
+  {
+    "id": 3,
+    "product_id": 2,
+    "title": "Ergonomic Heavy-Duty Wheels",
+    "desc": "Equipped with sturdy support wheels at the bottom of the body to facilitate the process of moving or rearranging the position of this large-capacity freezer in your business space."
+  },
+  {
+    "id": 4,
+    "product_id": 2,
+    "title": "Integrated Digital Thermometer",
+    "desc": "Features an accurate digital temperature indicator panel on the outside of the unit, making it easy for users to monitor internal temperature conditions at a glance without opening the door."
+  },
+  {
+    "id": 5,
+    "product_id": 2,
+    "title": "Secure Lock & Key Protection",
+    "desc": "Integration of an internal safety lock feature on the door handle to secure your valuable food supplies or commercial products from unscheduled access."
+  },
+  {
+    "id": 6,
+    "product_id": 3,
+    "title": "Supersize Massive Capacity",
+    "desc": "Provides an extra-spacious interior space without complex compartment dividers, allowing for the storage of large-dimensional food items such as whole meat cuts or massive quantities of boxed frozen food stocks."
+  },
+  {
+    "id": 7,
+    "product_id": 3,
+    "title": "Dual Door Energy Efficiency",
+    "desc": "Utilizes a double solid lid configuration that divides opening access, effectively blockading exposure to external air so the frozen temperature inside remains stable and reduces the compressor workload."
+  },
+  {
+    "id": 8,
+    "product_id": 3,
+    "title": "Industrial-Grade Fast Freezing",
+    "desc": "Equipped with a commercial-grade compressor capable of aggressively and consistently lowering temperatures, rapidly locking in food freshness quality to prevent bacterial growth."
+  },
+  {
+    "id": 9,
+    "product_id": 3,
+    "title": "Anti-Corrosive White Inner Lining",
+    "desc": "The inner wall lining is coated with a special anti-corrosion material that is strong and hygienic, preventing the formation of rust stains due to high humidity and making it very easy to clean."
+  },
+  {
+    "id": 10,
+    "product_id": 4,
+    "title": "Dual Function Countertop",
+    "desc": "The top of the unit functions as a spacious and sturdy preparation table, combining a food processing area with a cold storage space right beneath it."
+  },
+  {
+    "id": 11,
+    "product_id": 4,
+    "title": "Advanced Air Cooling System",
+    "desc": "Uses a ventilated air cooling system that distributes cold temperatures evenly to every corner of the cabinet without causing any frost buildup."
+  },
+  {
+    "id": 12,
+    "product_id": 4,
+    "title": "Smart Intelligent Computer Board Control",
+    "desc": "Equipped with a smart digital controller capable of monitoring temperatures with high accuracy up to 0.1°C and features a self-diagnosis function if anomalies occur in the system."
+  },
+  {
+    "id": 13,
+    "product_id": 4,
+    "title": "Eco-Friendly R290 Refrigerant & High Insulation",
+    "desc": "Uses eco-friendly R290 refrigerant paired with a 60mm thick high-density insulation layer to maintain optimal cold temperature stability and save electricity."
+  },
+  {
+    "id": 14,
+    "product_id": 4,
+    "title": "Hygienic Stainless Steel Construction",
+    "desc": "Made of high-quality 201 Stainless Steel that is rust-resistant, meets food sanitation standards, and is very easy to clean from oil stains or remaining cooking ingredients."
+  },
+  {
+    "id": 15,
+    "product_id": 5,
+    "title": "Vertical Space-Saving Design",
+    "desc": "A tall, vertical body design that maximizes internal storage capacity without taking up a lot of floor space in your crowded kitchen area."
+  },
+  {
+    "id": 16,
+    "product_id": 5,
+    "title": "Ventilated Dynamic Cooling System",
+    "desc": "Employs a dynamic fan-based cold air distribution system that ensures freezing temperatures are spread evenly across each shelf while preventing excessive frost buildup."
+  },
+  {
+    "id": 17,
+    "product_id": 5,
+    "title": "Hygienic Multi-Tier Adjustable Shelves",
+    "desc": "Equipped with multiple rows of sturdy shelf arrangements that can be adjusted in height, providing full flexibility to neatly arrange large-sized food containers."
+  },
+  {
+    "id": 18,
+    "product_id": 5,
+    "title": "Microprocessor Digital Thermostat",
+    "desc": "Adopts a smart digital control panel that precisely monitors and maintains internal temperature stability to prevent temperature fluctuations that ruin raw materials."
+  },
+  {
+    "id": 19,
+    "product_id": 5,
+    "title": "Commercial-Grade Stainless Steel Body",
+    "desc": "The inner and outer body construction is fully wrapped in thick, high-strength stainless steel material, guaranteeing the unit is rust-resistant, robust, and very easy to sanitize."
+  },
+  {
+    "id": 20,
+    "product_id": 6,
+    "title": "Fully Automatic Ice Production",
+    "desc": "An automatic working system ranging from water filling, the cube mold freezing process, to ice cube release into the storage bin without requiring complicated manual intervention."
+  },
+  {
+    "id": 21,
+    "product_id": 6,
+    "title": "High-Efficiency Rapid Freezing Evaporator",
+    "desc": "Supported by an advanced evaporator capable of optimizing aggressive cold temperature transfer, making the ice cube molding cycle shorter and more intensive."
+  },
+  {
+    "id": 22,
+    "product_id": 6,
+    "title": "Hygienic Food-Grade Ice Bin",
+    "desc": "The internal ice storage bin is lined with high-quality, food-grade certified insulation material to prevent ice from melting quickly while guaranteeing its cleanliness."
+  },
+  {
+    "id": 23,
+    "product_id": 6,
+    "title": "Premium Stainless Steel Outer Shell",
+    "desc": "The outer body is coated with a robust commercial-grade stainless steel material that is rust-resistant, providing a professional look and making it very easy to clean from kitchen dirt."
+  },
+  {
+    "id": 24,
+    "product_id": 6,
+    "title": "Smart Smart Sensors Control",
+    "desc": "Equipped with automatic sensors that detect incoming water volume and a limit sensor that will independently stop ice production when the ice bin is full to avoid overflow."
+  },
+  {
+    "id": 25,
+    "product_id": 7,
+    "title": "Compact Undercounter Space-Saving",
+    "desc": "A compact and ergonomic body dimension design, allowing it to be installed under kitchen counters or bar tables to save limited floor space."
+  },
+  {
+    "id": 26,
+    "product_id": 7,
+    "title": "Fully Automatic Smart Production Cycle",
+    "desc": "A fully automatic working cycle starting from self-filling water, molding hard crystal ice cubes, to automatic detection that halts operation when the storage bin is full."
+  },
+  {
+    "id": 27,
+    "product_id": 7,
+    "title": "Air-Cooled Rapid Freezing System",
+    "desc": "Supported by an efficient air-cooled system to rapidly cool the compressor, ensuring ice production remains stable throughout the day."
+  },
+  {
+    "id": 28,
+    "product_id": 7,
+    "title": "LED Digital Smart Control Display",
+    "desc": "Equipped with a user-friendly LED-based digital control panel, making it easy for you to adjust ice thickness, monitor operational status, and view warning indicators."
+  },
+  {
+    "id": 29,
+    "product_id": 7,
+    "title": "Durable Stainless Steel Architecture",
+    "desc": "The entire outer body is constructed using premium, robust stainless steel material, providing maximum anti-corrosion protection while being easy to wipe clean of stains."
+  },
+  {
+    "id": 30,
+    "product_id": 8,
+    "title": "Grab-and-Go Open Top Design",
+    "desc": "An open-top display concept without a blocking glass door, triggering impulse buys by providing maximum ease of direct access for customers to pick up products."
+  },
+  {
+    "id": 31,
+    "product_id": 8,
+    "title": "Advanced Air Curtain Cooling System",
+    "desc": "Uses consistent air curtain blowing technology at the top opening to isolate cold air inside the cabinet, keeping the internal temperature optimally maintained even without a cover."
+  },
+  {
+    "id": 32,
+    "product_id": 8,
+    "title": "Smart Electronic Digital Controller",
+    "desc": "Equipped with a smart digital temperature controller that displays precise temperature indicators, making it easy for staff to supervise and maintain the freshness of sensitive food items such as cut fruit or sushi."
+  },
+  {
+    "id": 33,
+    "product_id": 8,
+    "title": "Brilliant Panoramic LED Lighting",
+    "desc": "Integration of energy-efficient, high-intensity internal LED lights, providing even and bright illumination to enhance the visual aesthetic appeal of the displayed food."
+  },
+  {
+    "id": 34,
+    "product_id": 8,
+    "title": "Automatic Off-Cycle Defrosting",
+    "desc": "Supported by an automatic off-cycle frost melting feature, ensuring cold air circulation inside the unit remains smooth without the risk of ice clogging on the evaporator."
+  },
+  {
+    "id": 35,
+    "product_id": 9,
+    "title": "High-Frequency Induction Heating",
+    "desc": "Uses high-frequency electromagnetic technology that delivers heat directly to the bottom of the cookware instantly, minimizing heat energy wasted into the surrounding air."
+  },
+  {
+    "id": 36,
+    "product_id": 9,
+    "title": "Intelligent Thermostat Control",
+    "desc": "Equipped with a smart digital control panel to precisely regulate power levels and temperatures, providing perfect cooking consistency for every dish."
+  },
+  {
+    "id": 37,
+    "product_id": 9,
+    "title": "Heavy-Duty Micro-Crystalline Glass Top",
+    "desc": "The upper surface is coated with high-quality micro-crystalline glass that is resistant to extreme temperatures, scratches, and heavy loads from large-sized pots/pans."
+  },
+  {
+    "id": 38,
+    "product_id": 9,
+    "title": "Multi-Protection Safety Sensors",
+    "desc": "Integration of automatic safety features that instantly cut off electrical current if it detects overheating, unstable voltage, or when the unit is left without cookware on top of it."
+  },
+  {
+    "id": 39,
+    "product_id": 9,
+    "title": "Stainless Steel Industrial Housing",
+    "desc": "The entire outer body framework is constructed using commercial-standard thick stainless steel material that is robust, anti-corrosive, and very easy to sanitize after use."
+  },
+  {
+    "id": 40,
+    "product_id": 1,
+    "title": "Fast Freezing Technology",
+    "desc": "A super-fast cooling system capable of freezing food ingredients in a short time to lock in freshness and keep the nutritional content inside optimal."
+  },
+  {
+    "id": 41,
+    "product_id": 1,
+    "title": "Eco-Friendly Saving Energy",
+    "desc": "Designed with an efficient compressor system to produce maximum freezing performance, while remaining economical in electrical power consumption (Low Watt) to suppress operational costs."
+  },
+  {
+    "id": 42,
+    "product_id": 1,
+    "title": "Ergonomic & Heavy Duty Design",
+    "desc": "Sturdy body construction with high-quality materials and equipped with robust wheels at the bottom, making it easy to move or rearrange the unit according to room needs."
+  },
+  {
+    "id": 43,
+    "product_id": 1,
+    "title": "Smart Lock Key",
+    "desc": "Equipped with a Lock and Key safety feature on the freezer door to maintain the security of valuable food ingredient stocks from unwanted access."
+  },
+  {
+    "id": 44,
+    "product_id": 1,
+    "title": "Smart Internal Temperature Monitoring",
+    "desc": "Integration of a Digital Thermometer component and an internal lamp that makes it easy for users to accurately monitor temperatures while clearly viewing the contents of the freezer."
+  }
+]

@@ -1,0 +1,266 @@
+[
+  {
+    "id": 1,
+    "product_id": 2,
+    "title": "Storage Capacity",
+    "value": "650 Liters"
+  },
+  {
+    "id": 2,
+    "product_id": 2,
+    "title": "Temperature Range",
+    "value": "-18°C to -22°C"
+  },
+  {
+    "id": 3,
+    "product_id": 2,
+    "title": "Power Consumption",
+    "value": "275 Watts"
+  },
+  {
+    "id": 4,
+    "product_id": 2,
+    "title": "Electrical Voltage",
+    "value": "220 Volts / 50 Hz"
+  },
+  {
+    "id": 5,
+    "product_id": 2,
+    "title": "Product Dimensions",
+    "value": "1655 x 740 x 850 mm"
+  },
+  {
+    "id": 6,
+    "product_id": 3,
+    "title": "Storage Capacity",
+    "value": "700 Liters"
+  },
+  {
+    "id": 7,
+    "product_id": 3,
+    "title": "Temperature Range",
+    "value": "20°C to -22°C"
+  },
+  {
+    "id": 8,
+    "product_id": 3,
+    "title": "Power Consumption",
+    "value": "280 Watts"
+  },
+  {
+    "id": 9,
+    "product_id": 3,
+    "title": "Product Dimensions",
+    "value": "1800 x 740 x 850 mm"
+  },
+  {
+    "id": 10,
+    "product_id": 4,
+    "title": "Storage Capacity",
+    "value": "250 Liters"
+  },
+  {
+    "id": 11,
+    "product_id": 4,
+    "title": "Power Consumption",
+    "value": "270 Watts"
+  },
+  {
+    "id": 12,
+    "product_id": 4,
+    "title": "Electrical Voltage",
+    "value": "220 Volts / 50 Hz"
+  },
+  {
+    "id": 13,
+    "product_id": 4,
+    "title": "Temperature Range",
+    "value": "-6°C to +15°C"
+  },
+  {
+    "id": 14,
+    "product_id": 4,
+    "title": "Product Dimensions",
+    "value": "1200 x 760 x 800 mm"
+  },
+  {
+    "id": 15,
+    "product_id": 5,
+    "title": "Storage Capacity",
+    "value": "700 Liters"
+  },
+  {
+    "id": 16,
+    "product_id": 5,
+    "title": "Temperature Range",
+    "value": "-18°C to -22°C"
+  },
+  {
+    "id": 17,
+    "product_id": 5,
+    "title": "Power Consumption",
+    "value": "450 - 550 Watts"
+  },
+  {
+    "id": 18,
+    "product_id": 5,
+    "title": "Electrical Voltage",
+    "value": "220 Volts / 50 Hz"
+  },
+  {
+    "id": 19,
+    "product_id": 5,
+    "title": "Defrost System",
+    "value": "Automatic Defrost / No-Frost"
+  },
+  {
+    "id": 20,
+    "product_id": 6,
+    "title": "Production Capacity",
+    "value": "500 Kg / 24 Hours"
+  },
+  {
+    "id": 21,
+    "product_id": 6,
+    "title": "Bin Capacity",
+    "value": "200 Kg"
+  },
+  {
+    "id": 22,
+    "product_id": 6,
+    "title": "Ice Type",
+    "value": "Cube Ice / Crystal Ice"
+  },
+  {
+    "id": 23,
+    "product_id": 6,
+    "title": "Power Consumption",
+    "value": "1100 - 2000 Watts"
+  },
+  {
+    "id": 24,
+    "product_id": 6,
+    "title": "Electrical Voltage",
+    "value": "220 Volts / 50 Hz"
+  },
+  {
+    "id": 25,
+    "product_id": 7,
+    "title": "Ice Type",
+    "value": "Clear Cube Ice"
+  },
+  {
+    "id": 26,
+    "product_id": 7,
+    "title": "Production Capacity",
+    "value": "54 - 55 Kg / 24 Hours"
+  },
+  {
+    "id": 27,
+    "product_id": 7,
+    "title": "Bin Capacity",
+    "value": "20 - 30 Kg"
+  },
+  {
+    "id": 28,
+    "product_id": 7,
+    "title": "Power Consumption",
+    "value": "380 - 450 Watts"
+  },
+  {
+    "id": 29,
+    "product_id": 7,
+    "title": "Electrical Voltage",
+    "value": "220 Volts / 50 Hz"
+  },
+  {
+    "id": 30,
+    "product_id": 8,
+    "title": "Device Type",
+    "value": "Open Top Counter / Multideck Showcase Chiller"
+  },
+  {
+    "id": 31,
+    "product_id": 8,
+    "title": "Temperature Range",
+    "value": "+2°C to +10°C"
+  },
+  {
+    "id": 32,
+    "product_id": 8,
+    "title": "Cooling System",
+    "value": "Ventilated / Dynamic Air Cooling"
+  },
+  {
+    "id": 33,
+    "product_id": 8,
+    "title": "Product Dimensions",
+    "value": "1200 x 750 x 850-1000 mm"
+  },
+  {
+    "id": 34,
+    "product_id": 8,
+    "title": "Power Consumption",
+    "value": "450 - 650 Watts"
+  },
+  {
+    "id": 35,
+    "product_id": 9,
+    "title": "Device Type",
+    "value": "Commercial Induction Stove"
+  },
+  {
+    "id": 36,
+    "product_id": 9,
+    "title": "Power Consumption",
+    "value": "3500 - 5000 Watts"
+  },
+  {
+    "id": 37,
+    "product_id": 9,
+    "title": "Electrical Voltage",
+    "value": "220 - 240 Volts / 50 Hz"
+  },
+  {
+    "id": 38,
+    "product_id": 9,
+    "title": "Temperature Range",
+    "value": "60°C to 240°C"
+  },
+  {
+    "id": 39,
+    "product_id": 9,
+    "title": "Power Level Control",
+    "value": "Multi-level Adjustment"
+  },
+  {
+    "id": 40,
+    "product_id": 1,
+    "title": "Storage Capacity",
+    "value": "550 Liters"
+  },
+  {
+    "id": 41,
+    "product_id": 1,
+    "title": "Temperature Range",
+    "value": "30°C to -22°C"
+  },
+  {
+    "id": 42,
+    "product_id": 1,
+    "title": "Power Consumption",
+    "value": "170 Watts"
+  },
+  {
+    "id": 43,
+    "product_id": 1,
+    "title": "Product Dimensions",
+    "value": "1530 x 755 x 840 mm"
+  },
+  {
+    "id": 44,
+    "product_id": 1,
+    "title": "Electrical Voltage",
+    "value": "220 Volts / 50 Hz"
+  }
+]

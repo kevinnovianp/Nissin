@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "img": "6aaaad82570b1.png",
+    "desc": "Freezer"
+  },
+  {
+    "id": 2,
+    "img": "6aaaadd4e2ecd.png",
+    "desc": "Chiller"
+  },
+  {
+    "id": 3,
+    "img": "6aaaadf1f0add.png",
+    "desc": "Ice Machine"
+  },
+  {
+    "id": 4,
+    "img": "6aaaae44c1336.png",
+    "desc": "Showcase"
+  },
+  {
+    "id": 5,
+    "img": "6aaaae882f30f.png",
+    "desc": "Cooking Equipment"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "img": "6aaab2c15514a.png",
+    "name": "BD-550 Chest Freezer Basic",
+    "model": "BD-550",
+    "category_id": 1,
+    "desc_1": "Large capacity freezer that is reliable and energy efficient.",
+    "desc_2": "Very ideal for maintaining the freshness of your culinary business food ingredients.",
+    "intro_1": "Storing food stocks in large quantities now does not mean worrying about lack of space or physical quality degradation.",
+    "intro_2": "Are you looking for a tough freezing device to support the smooth running of your culinary business? BD-550 Chest Freezer Basic is ready to be a mainstay through a combination of its spacious capacity, even cooling technology, and a robust and durable design."
+  },
+  {
+    "id": 2,
+    "img": "6aaab4bbc64c1.png",
+    "name": "BD-650 Chest Freezer Basic",
+    "model": "BD-650",
+    "category_id": 1,
+    "desc_1": "Extra wide 650 Liter capacity and flash cooling system.",
+    "desc_2": "Premium freezer with ergonomic design that saves electrical power.",
+    "intro_1": "Smart combination of even cooling technology with a practical dual-door configuration.",
+    "intro_2": "Facing a surge in raw material stocks or an ever-growing culinary business demands a food storage space that is not only spacious, but also reliable. Present as an answer to the needs of the Horeca industry, BD-650 Chest Freezer Basic offers a super spacious freezing space with power efficiency specifically designed for continuous, round-the-clock use."
+  },
+  {
+    "id": 3,
+    "img": "6aaab6aaef18c.png",
+    "name": "BD-700D Chest Freezer Supersize Series",
+    "model": "BD-700D",
+    "category_id": 1,
+    "desc_1": "Jumbo freezer with a capacity of 700 Liters.",
+    "desc_2": "Accompanied by extra powerful cooling technology, specifically designed as a main storage solution for massive scale catering, hotels, and the culinary industry.",
+    "intro_1": "A reliable and tough two-door mainstay freezer, capable of maintaining the freshness of frozen stocks in super large volumes.",
+    "intro_2": "In the midst of the demands of an expanding culinary business, the availability of raw material storage space on a large scale is key to smooth operations. Answering this challenge, the BD-700D Chest Freezer Supersize Series comes to offer super spacious storage space and commercial cooling system reliability to ensure your meat, seafood, and frozen food remain in premium quality without compromise."
+  },
+  {
+    "id": 4,
+    "img": "6aab49044c61c.png",
+    "name": "Undercounter Chiller LRCP-120 RBG",
+    "model": "LRCP-120",
+    "category_id": 2,
+    "desc_1": "Chiller made of premium stainless steel.",
+    "desc_2": "Tough 2-door chiller with Air Cooling system.",
+    "intro_1": "Smart integration between a heavy-duty work table on top and a precise temperature cooling cabinet at the bottom.",
+    "intro_2": "Limited space is no longer an obstacle to keeping the freshness of vegetables, fruit, dairy products, and raw materials prime. Undercounter Chiller LRCP-120 RBG is designed with industrial material standards and even cooling technology without frost, making it an essential investment for your cafe, restaurant, hotel, or catering business."
+  },
+  {
+    "id": 5,
+    "img": "6aab4b1309226.png",
+    "name": "SFCP-70 Upright Freezer RBG",
+    "model": "SFCP-70",
+    "category_id": 1,
+    "desc_1": "Vertical one-door freezer made of premium stainless steel.",
+    "desc_2": "Large storage capacity with optimal space efficiency for professional kitchens.",
+    "intro_1": "A reliable dynamic cooling system freezer, robust, and facilitates hygienic food stock arrangements.",
+    "intro_2": "Maintaining the freshness of meat, seafood, and frozen processed products in the long term requires stable and even cooling performance. SFCP-70 Upright Freezer RBG comes with corrosion-resistant industrial material standards and high-level freezing technology, making it the best investment choice for your restaurant, hotel, catering business, or culinary laboratory."
+  },
+  {
+    "id": 6,
+    "img": "6aab4ccf7b6db.png",
+    "name": "AC-500 Ice Cube Machine RBG",
+    "model": "AC-500",
+    "category_id": 3,
+    "desc_1": "Made of premium stainless steel.",
+    "desc_2": "Fast, efficient, and hygienic cubic ice cube maker.",
+    "intro_1": "Capable of consistently producing hundreds of kilograms of crystal ice cubes per day.",
+    "intro_2": "Do not let the smooth operation of your cafe or restaurant be hampered by reliance on external ice cube supplies that are not necessarily guaranteed to be clean. AC-500 Ice Cube Machine RBG is ready to be an independent ice production center in your commercial kitchen, combining a fast automatic molding system, reliable ice bin storage, and food-grade materials to maintain the hygiene quality of every ice block produced."
+  },
+  {
+    "id": 7,
+    "img": "6aac1daac6230.png",
+    "name": "BT-120 Ice Cube Machine RBG",
+    "model": "BT-120",
+    "category_id": 3,
+    "desc_1": "Compact undercounter type automatic ice maker.",
+    "desc_2": "Portable machine made of stainless steel.",
+    "intro_1": "Efficiency in utilizing floor space highly determines the comfort of kitchen staff workflow.",
+    "intro_2": "Providing clear and hygienic ice cubes independently now no longer requires a giant-sized device. BT-120 Ice Cube Machine RBG is ready to be a reliable operational partner that works fully automatically, combining molding speed, power consumption efficiency, and commercial standard material durability to support the quality of your every beverage serving."
+  },
+  {
+    "id": 8,
+    "img": "6aac1fd0cff5c.png",
+    "name": "SDC1210 Open Top Counter Chiller Showcase RBG",
+    "model": "SDC1210",
+    "category_id": 4,
+    "desc_1": "Counter chiller with an open-top glass concept (doorless).",
+    "desc_2": "Maximum product visualization through a horizontal counter design without door partitions.",
+    "intro_1": "Combines the convenience of direct customer access (grab-and-go) with Crown Horeca commercial standard even cooling technology.",
+    "intro_2": "Integrating modern aesthetics and high-level cooling functionality is now easier. SDC1210 Open Top Counter Chiller Showcase is specifically designed to be placed on a countertop, providing constant cold temperature stability thanks to a dynamic air curtain system that prevents external hot air from damaging the quality of your fresh food."
+  },
+  {
+    "id": 9,
+    "img": "6aac24e6aae0f.png",
+    "name": "NSN-IHF100Z-T-H9",
+    "model": "T-H9",
+    "category_id": 5,
+    "desc_1": "Suitable for large-scale industrial kitchens.",
+    "desc_2": "Premium induction heating device with smart control system.",
+    "intro_1": "Aggressive magnetic heating and high thermal efficiency.",
+    "intro_2": "Creating a clean kitchen working environment with minimal fire risk and energy efficiency can now be achieved easily. NSN-IHF100Z-T-H9 is designed with an impact-resistant body standard and an automatic sensor system, making it the primary choice for hotels, restaurants, catering, and central kitchens that require intensive cooking productivity every day."
+  }
+]

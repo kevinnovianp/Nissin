@@ -1,0 +1,248 @@
+[
+  {
+    "id": 1,
+    "product_id": 2,
+    "title": "Refrigerant Type",
+    "value": "R290 / R600A"
+  },
+  {
+    "id": 2,
+    "product_id": 2,
+    "title": "Number of Doors",
+    "value": "2 Doors (Dual Top Loading Lid)"
+  },
+  {
+    "id": 3,
+    "product_id": 2,
+    "title": "Compressor Warranty",
+    "value": "3 Years"
+  },
+  {
+    "id": 4,
+    "product_id": 2,
+    "title": "Spare Parts Warranty",
+    "value": "1 Year"
+  },
+  {
+    "id": 5,
+    "product_id": 3,
+    "title": "Defrost System",
+    "value": "Manual"
+  },
+  {
+    "id": 6,
+    "product_id": 3,
+    "title": "Safety Feature",
+    "value": "Secure Key Lock"
+  },
+  {
+    "id": 7,
+    "product_id": 3,
+    "title": "Warranty",
+    "value": "3 Years"
+  },
+  {
+    "id": 8,
+    "product_id": 4,
+    "title": "Cooling System",
+    "value": "Air Cooling (Ventilated)"
+  },
+  {
+    "id": 9,
+    "product_id": 4,
+    "title": "Body Material",
+    "value": "Stainless Steel 201"
+  },
+  {
+    "id": 10,
+    "product_id": 4,
+    "title": "Number of Doors",
+    "value": "2 Swing Doors (Double Solid Door)"
+  },
+  {
+    "id": 11,
+    "product_id": 4,
+    "title": "Refrigerant Type",
+    "value": "R290 (Eco-Friendly)"
+  },
+  {
+    "id": 12,
+    "product_id": 5,
+    "title": "Door Type",
+    "value": "Single Solid Door Upright"
+  },
+  {
+    "id": 13,
+    "product_id": 5,
+    "title": "Cabinet Material",
+    "value": "Full Stainless Steel"
+  },
+  {
+    "id": 14,
+    "product_id": 5,
+    "title": "Support Feet",
+    "value": "Castors with Brake"
+  },
+  {
+    "id": 15,
+    "product_id": 5,
+    "title": "Safety Feature",
+    "value": "Integrated Door Lock"
+  },
+  {
+    "id": 16,
+    "product_id": 5,
+    "title": "Warranty",
+    "value": "3 Years"
+  },
+  {
+    "id": 17,
+    "product_id": 6,
+    "title": "Construction Material",
+    "value": "Full Stainless Steel & ABS Engineering Plastic"
+  },
+  {
+    "id": 18,
+    "product_id": 6,
+    "title": "Cooling System",
+    "value": "Air and Water Cooled"
+  },
+  {
+    "id": 19,
+    "product_id": 6,
+    "title": "Refrigerant Type",
+    "value": "R404A / R290 (Eco-Friendly)"
+  },
+  {
+    "id": 20,
+    "product_id": 6,
+    "title": "Indicator Panel Feature",
+    "value": "Digital Control Indicator"
+  },
+  {
+    "id": 21,
+    "product_id": 6,
+    "title": "Warranty",
+    "value": "3 Years"
+  },
+  {
+    "id": 22,
+    "product_id": 7,
+    "title": "Condenser Cooling System",
+    "value": "Air-Cooled"
+  },
+  {
+    "id": 23,
+    "product_id": 7,
+    "title": "Production Time Cycle",
+    "value": "12 to 15 minutes / molding cycle"
+  },
+  {
+    "id": 24,
+    "product_id": 7,
+    "title": "Construction Material",
+    "value": "Premium Stainless Steel & ABS Plastic"
+  },
+  {
+    "id": 25,
+    "product_id": 7,
+    "title": "Additional Features",
+    "value": "Adjustable Feet"
+  },
+  {
+    "id": 26,
+    "product_id": 7,
+    "title": "Warranty",
+    "value": "3 Years"
+  },
+  {
+    "id": 27,
+    "product_id": 8,
+    "title": "Electrical Voltage",
+    "value": "220 - 240 Volts / 50 Hz"
+  },
+  {
+    "id": 28,
+    "product_id": 8,
+    "title": "Refrigerant Type",
+    "value": "R404A / R290 (Eco-Friendly)"
+  },
+  {
+    "id": 29,
+    "product_id": 8,
+    "title": "Cabinet Material",
+    "value": "Stainless Steel, Tempered Glass, & ABS Polyurethane"
+  },
+  {
+    "id": 30,
+    "product_id": 8,
+    "title": "Additional Cover Feature",
+    "value": "Night Curtain"
+  },
+  {
+    "id": 31,
+    "product_id": 8,
+    "title": "Warranty",
+    "value": "3 Years"
+  },
+  {
+    "id": 32,
+    "product_id": 9,
+    "title": "Top Surface Material",
+    "value": "High-Strength Micro-Crystalline Glass"
+  },
+  {
+    "id": 33,
+    "product_id": 9,
+    "title": "Body Frame Material",
+    "value": "Stainless Steel 201 / 304 Premium"
+  },
+  {
+    "id": 34,
+    "product_id": 9,
+    "title": "Additional Safety Feature",
+    "value": "Auto-Shut Off & Over-Current Protection"
+  },
+  {
+    "id": 35,
+    "product_id": 9,
+    "title": "Internal Cooling System",
+    "value": "Dual High-Speed Exhaust Fan"
+  },
+  {
+    "id": 36,
+    "product_id": 9,
+    "title": "Warranty",
+    "value": "3 Years"
+  },
+  {
+    "id": 37,
+    "product_id": 1,
+    "title": "Unit Net Weight",
+    "value": "75 Kg"
+  },
+  {
+    "id": 38,
+    "product_id": 1,
+    "title": "Number of Doors",
+    "value": "1 Door (Top Loading Lid)"
+  },
+  {
+    "id": 39,
+    "product_id": 1,
+    "title": "Number of Shelves / Baskets",
+    "value": "1 Hanging Basket"
+  },
+  {
+    "id": 40,
+    "product_id": 1,
+    "title": "Compressor Warranty",
+    "value": "3 Years"
+  },
+  {
+    "id": 41,
+    "product_id": 1,
+    "title": "Spare Parts Warranty",
+    "value": "1 Year"
+  }
+]

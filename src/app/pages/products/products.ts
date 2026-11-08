@@ -30,23 +30,17 @@ export class Products implements OnInit, OnDestroy {
       switchMap(params => {
         let categoryId = params.get('category');
         this.currentPage = 1;
-        return categoryId ? this.catalogService.getProducts(Number(categoryId)) : this.catalogService.getProducts();
+        return categoryId ? this.catalogService.getProductsByCategory(Number(categoryId)) : this.catalogService.getProducts();
       })
     ).subscribe({
       next: (data: any[]) => {
         this.products = data.map(product => {
           return {
             ...product,
-            img_src: this.catalogService.imgUrl + 'products/' + product.img
+            img_src: this.catalogService.catalogUrl + '/products/' + product.img
           };
         });
 
-        // if (data.length > 0) {
-        //   this.products = Array.from({ length: 65 }, (_, index) => {
-        //     let tmp = data[0];
-        //     return { ...tmp, id: index + 1, name: `${tmp.name} - ${index + 1}` };
-        //   });
-        // }
         this.filteredProducts = this.products;
 
         this.calculatePages();

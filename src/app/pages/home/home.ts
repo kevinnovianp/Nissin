@@ -21,29 +21,23 @@ export class Home implements OnInit {
   async ngOnInit() {
     try{
       this.carousels = await firstValueFrom(this.catalogService.getCarousels());
-      this.cdr.markForCheck();
 
-      const categoriesData = await firstValueFrom(
-        this.catalogService.getCategories().pipe(
-          map((data: any[]) =>
-            data.map(category => ({
-              ...category,
-              img_src: this.catalogService.imgUrl + 'categories/' + category.img
-            }))
-          )
-        )
-      );
-      this.categories = categoriesData;
-      this.cdr.markForCheck();
+      this.categories = await firstValueFrom(this.catalogService.getCategories().pipe(
+        map((data: any[]) => data.map(category => ({
+          ...category,
+          img_src: this.catalogService.catalogUrl + '/categories/' + category.img
+        })))
+      ));
 
-      const productsData = await firstValueFrom(this.catalogService.getLatestProducts());
-      this.latestProducts = productsData.map(product => {
-        const category = this.categories.find(c => c.id === product.category_id);
-        return {
-          ...product,
-          category_name: category.desc
-        };
-      });
+      this.latestProducts = await firstValueFrom(this.catalogService.getLatestProducts(5).pipe(
+        map((data: any[]) => data.map(product => {
+          const category = this.categories.find(c => c.id === product.category_id);
+          return {
+            ...product,
+            category_name: category.desc
+          };
+        }))
+      ));
       this.cdr.markForCheck();
 
     } catch (err) {

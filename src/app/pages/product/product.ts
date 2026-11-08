@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { firstValueFrom, map, Subscription } from 'rxjs';
 import { CatalogService } from '../../services/catalog';
 
 @Component({
@@ -25,18 +25,14 @@ export class Product implements OnInit, OnDestroy {
     });
   }
 
-  loadProduct(id: number) {
-    this.catalogService.getProductDetail(id).subscribe({
-      next: (data: any) => {
-        this.product = {...data,
-          img_src: this.catalogService.imgUrl + 'products/' + data.img
-        };
-        this.cdr.markForCheck();
-      },
-      error: (err) => {
-        console.error('Err: ', err);
-      }
-    });
+  async loadProduct(id: number) {
+    this.product = await firstValueFrom(this.catalogService.getProductDetail(id).pipe(
+      map((data: any) => ({
+        ...data,
+        img_src: this.catalogService.catalogUrl + '/products/' + data.img
+      }))
+    ));
+    this.cdr.markForCheck();
   }
 
   ngOnDestroy() {
